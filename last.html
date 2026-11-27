@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kashish 💗</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Neue:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #fff0f5, #ffe4ed, #fff5f8);
+    color: #75445c;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1, h2 {
+    font-family: 'Bubblegum Sans', cursive;
+    color: #d45b8a;
+}
+
+p {
+    line-height: 1.8;
+}
+
+/* Floating hearts */
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    color: rgba(220, 105, 150, 0.35);
+    font-size: 20px;
+    pointer-events: none;
+    z-index: 5;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Buttons */
+
+.primary-btn {
+    padding: 15px 30px;
+    background: linear-gradient(135deg, #ec83ad, #d85f92);
+    color: white;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(216, 95, 146, 0.25);
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(216, 95, 146, 0.35);
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    background:
+        radial-gradient(circle at 15% 20%, #ffffff 0, transparent 25%),
+        radial-gradient(circle at 85% 80%, #ffd5e5 0, transparent 30%);
+}
+
+.hero-content {
+    max-width: 750px;
+    position: relative;
+    z-index: 2;
+    animation: fadeUp 1.2s ease;
+}
+
+.eyebrow {
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #b77a96;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 8vw, 76px);
+    line-height: 1.12;
+    margin-bottom: 22px;
+    text-shadow: 2px 3px 0 #fff;
+}
+
+.hero p {
+    max-width: 570px;
+    margin: 0 auto 30px;
+    font-size: 17px;
+    color: #8d6176;
+}
+
+.scroll-hint {
+    margin-top: 45px;
+    font-size: 13px;
+    color: #b77a96;
+    animation: pulse 2s infinite;
+}
+
+/* Gallery */
+
+.gallery-section {
+    background: rgba(255,255,255,0.35);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.section-heading h2 {
+    font-size: clamp(35px, 6vw, 52px);
+    margin-bottom: 12px;
+}
+
+.section-heading p {
+    color: #9b6d82;
+    font-size: 15px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: min(950px, 100%);
+    position: relative;
+    z-index: 1;
+}
+
+.photo-card {
+    background: white;
+    padding: 12px 12px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(160, 85, 120, 0.13);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.photo-card:nth-child(1) {
+    transform: rotate(-3deg);
+}
+
+.photo-card:nth-child(2) {
+    transform: rotate(2deg);
+}
+
+.photo-card:nth-child(3) {
+    transform: rotate(-1deg);
+}
+
+.photo-card:hover {
+    transform: translateY(-12px) rotate(0deg) scale(1.04);
+    box-shadow: 0 18px 35px rgba(160, 85, 120, 0.2);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 310px;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    background: #ffe4ed;
+}
+
+.photo-caption {
+    text-align: center;
+    padding-top: 14px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
+    color: #bd6289;
+    font-weight: 700;
+}
+
+/* Music */
+
+.music-box {
+    width: min(430px, 92%);
+    margin: 45px auto 0;
+    padding: 22px;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 10px 30px rgba(160, 85, 120, 0.12);
+    text-align: center;
+}
+
+.music-icon {
+    font-size: 36px;
+    margin-bottom: 8px;
+    animation: musicPulse 2s infinite;
+}
+
+.music-box h3 {
+    color: #c45e88;
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.music-box p {
+    color: #a17a8b;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.music-btn {
+    background: #e77eaa;
+    color: white;
+    padding: 11px 24px;
+    border-radius: 25px;
+    font-weight: 700;
+    transition: 0.3s;
+}
+
+.music-btn:hover {
+    background: #d45b8a;
+    transform: scale(1.04);
+}
+
+@keyframes musicPulse {
+    50% { transform: scale(1.15); }
+}
+
+/* Letter invitation */
+
+.invitation {
+    text-align: center;
+    background:
+        radial-gradient(circle at 20% 20%, #fff 0, transparent 25%),
+        radial-gradient(circle at 80% 80%, #ffd7e7 0, transparent 30%);
+}
+
+.invitation-content {
+    max-width: 650px;
+    position: relative;
+    z-index: 1;
+}
+
+.envelope {
+    font-size: 75px;
+    margin-bottom: 20px;
+    animation: envelopeFloat 3s ease-in-out infinite;
+}
+
+.invitation h2 {
+    font-size: clamp(38px, 7vw, 58px);
+    margin-bottom: 18px;
+}
+
+.invitation p {
+    font-size: 16px;
+    color: #94677d;
+    margin-bottom: 28px;
+}
+
+@keyframes envelopeFloat {
+    50% { transform: translateY(-12px) rotate(4deg); }
+}
+
+/* Letter */
+
+.letter-section {
+    background: linear-gradient(135deg, #fff0f5, #ffe2ec);
+    padding: 90px 18px;
+}
+
+.letter-paper {
+    width: min(760px, 100%);
+    background: #fffdfb;
+    padding: clamp(25px, 6vw, 55px);
+    border-radius: 8px;
+    box-shadow: 0 15px 45px rgba(130, 73, 99, 0.16);
+    position: relative;
+    border: 1px solid #f6dce6;
+    animation: fadeUp 1s ease;
+}
+
+.letter-paper::before {
+    content: "💗";
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 42px;
+}
+
+.letter-paper h2 {
+    text-align: center;
+    font-size: clamp(34px, 6vw, 46px);
+    margin-bottom: 28px;
+}
+
+.letter-body {
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
+    color: #755568;
+    line-height: 1.9;
+}
+
+.letter-body p {
+    margin-bottom: 19px;
+}
+
+.letter-body .signature {
+    margin-top: 30px;
+    color: #d45b8a;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.close-letter {
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Bubblegum Sans', cursive;
+    color: #d45b8a;
+    font-size: 23px;
+}
+
+/* Final screen */
+
+.final-section {
+    text-align: center;
+    background:
+        radial-gradient(circle at 50% 50%, #fff 0, #ffe5ef 45%, #ffd4e5 100%);
+}
+
+.final-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 1.3s ease;
+}
+
+.final-content .cake {
+    font-size: 85px;
+    margin-bottom: 20px;
+    animation: cakeBounce 2s infinite;
+}
+
+.final-content h1 {
+    font-size: clamp(45px, 9vw, 85px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.final-content p {
+    color: #93647b;
+    font-size: 18px;
+    max-width: 550px;
+    margin: auto;
+}
+
+.final-date {
+    margin-top: 30px;
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: #b77a96;
+}
+
+/* Animations */
+
+@keyframes cakeBounce {
+    50% { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    50% { opacity: 0.45; }
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+    section {
+        padding: 65px 17px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+        max-width: 380px;
+        gap: 28px;
+    }
+
+    .photo-card:nth-child(n) {
+        transform: rotate(0deg);
+    }
+
+    .photo-card img {
+        height: 350px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .letter-body {
+        font-size: 17px;
+    }
+
+    .music-box {
+        margin-top: 35px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 3: HERO -->
+
+<section class="hero" id="top">
+    <div class="hero-content">
+
+        <div class="eyebrow">A little something for you ✨</div>
+
+        <h1>A Little Glimpse of You, Kashish! 💗</h1>
+
+        <p>
+            Some people make ordinary days a little more special.
+            Here's a tiny collection of memories and a whole lot of
+            wishes for someone who's a wonderful friend.
+        </p>
+
+        <button class="primary-btn"
+        onclick="document.getElementById('gallery').scrollIntoView({behavior:'smooth'})">
+            Let's Take a Look 🎀
+        </button>
+
+        <div class="scroll-hint">
+            A few memories are waiting below ↓
+        </div>
+
+    </div>
+</section>
+
+<!-- PHOTOS AND MUSIC -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="section-heading">
+        <h2>Little Moments, Big Memories 📸</h2>
+        <p>A few glimpses worth remembering. ❤️</p>
+    </div>
+
+    <div class="gallery">
+
+        <div class="photo-card">
+            <img src="./02.jpg" alt="A memory">
+            <div class="photo-caption">A lovely memory ❤️</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="./03.jpg" alt="A happy moment">
+            <div class="photo-caption">Good times ✨</div>
+        </div>
+
+        <div class="photo-card">
+            <img src="./04.jpg" alt="Another memory">
+            <div class="photo-caption">One for the memories 🌷</div>
+        </div>
+
+    </div>
+
+    <div class="music-box">
+
+        <div class="music-icon">🎵</div>
+
+        <h3>A Little Music For You</h3>
+
+        <p>Because every memory deserves a soundtrack.</p>
+
+        <audio id="birthdaySong" preload="metadata">
+            <source src="./Piche Tere.mp3" type="audio/mpeg">
+        </audio>
+
+        <button class="music-btn" id="musicToggle" onclick="toggleMusic()">
+            ▶ Play Music
+        </button>
+
+    </div>
+
+</section>
+
+<!-- DIRECT LETTER INVITATION -->
+
+<section class="invitation" id="invitation">
+
+    <div class="invitation-content">
+
+        <div class="envelope">💌</div>
+
+        <h2>One Last Thing...</h2>
+
+        <p>
+            Beyond all the jokes, bakloli and memories,
+            there are a few things I genuinely want to tell you.
+            So here's a little letter, just for you. ❤️
+        </p>
+
+        <button class="primary-btn" onclick="openLetter()">
+            Read My Letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+<!-- COMPLETE LETTER -->
+
+<section class="letter-section hidden" id="letter">
+
+    <div class="letter-paper">
+
+        <h2>Dear Kashish, 💗</h2>
+
+        <div class="letter-body">
+
+            <p>
+                First of all, Happiest Birthdayyy, Kashishhh! ❤️
+                I hope today brings you as much happiness as you bring
+                to the people around you. You genuinely deserve all the
+                good things life has to offer.
+            </p>
+
+            <p>
+                It's funny how some people slowly become a part of your
+                everyday memories without you even realising it.
+                From our school days in 11th to Gagan Sir's classes,
+                library ki backchodi, group conversations, lunch before
+                Accounts, canteen moments and all those random jokes —
+                there are so many little things that I still remember.
+            </p>
+
+            <p>
+                We might not have realised it back then, but those
+                ordinary days became some really nice memories.
+                I genuinely miss those days sometimes. The random
+                conversations, the laughter and all the nonsense
+                that somehow made everything more fun.
+            </p>
+
+            <p>
+                But there's one thing I will always remember.
+                When I was admitted to the hospital and going through
+                one of the lowest and most difficult phases of my life,
+                you came to meet me. Not just once, but twice.
+                And honestly, that meant a lot more than I can explain.
+            </p>
+
+            <p>
+                I still remember those roses and chocolates.
+                It was such a thoughtful gesture, and your presence
+                gave me comfort at a time when things were really
+                difficult. I even remember those aunties staring
+                and teasing me afterwards. 😭
+                That whole moment was something else!
+            </p>
+
+            <p>
+                Thank you for showing up when I needed support.
+                Thank you for checking on me, for being there,
+                and for making me feel that I wasn't alone.
+                Maybe I didn't express it properly at that time,
+                but I genuinely appreciate it. I'll always remember
+                that kindness.
+            </p>
+
+            <p>
+                And Kashish, one more thing — whenever you feel low,
+                whenever life gets overwhelming, or whenever you feel
+                like you need someone to talk to, please remember that
+                I'm always here for you. You don't have to deal with
+                everything on your own. Whether you need someone to
+                listen, someone to comfort you, or just someone to sit
+                with you through a difficult day, you can always count
+                on me. Just like you were there for me when I needed
+                support, I hope I can be there for you too.
+                Never hesitate to reach out. ❤️
+            </p>
+
+            <p>
+                And now, I really hope you're doing better too.
+                I know you've been dealing with some health issues,
+                and I genuinely wish you a speedy recovery.
+                Please take care of yourself, get enough rest,
+                and don't put unnecessary stress or pressure on
+                yourself. Your health and peace matter.
+            </p>
+
+            <p>
+                You spend so much time caring for other people,
+                comforting them and making sure they're okay.
+                I hope you give yourself the same care and kindness.
+                You deserve that too.
+            </p>
+
+            <p>
+                I hope this new year of your life brings you
+                good health, happiness, success, countless reasons
+                to smile and people who genuinely value you.
+                May you achieve everything you've been working for
+                and experience many beautiful moments ahead.
+            </p>
+
+            <p>
+                Keep making those funny faces, keep doing your
+                unlimited bakloli, keep making random comments
+                and keep being the caring person you are.
+                Never lose that side of yourself.
+            </p>
+
+            <p>
+                Life gets busy, people get occupied with their own
+                journeys, and things keep changing. But I'm genuinely
+                glad we got to share these school days and create
+                these memories together.
+            </p>
+
+            <p>
+                Once again, Happy Birthday, Kashish!
+                Thank you for being a good friend and for being there
+                during a time I'll never forget.
+                I hope the coming year is kinder, healthier and
+                happier for you. ❤️
+            </p>
+
+            <p class="signature">
+                Lots of good wishes, always. 🌷
+            </p>
+
+        </div>
+
+        <div class="close-letter">
+            Here's to more laughter, more memories and more bakloli! 🥹❤️
+        </div>
+
+        <div style="text-align:center; margin-top:35px;">
+            <button class="primary-btn" onclick="showFinal()">
+                One More Surprise 🎂
+            </button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FINAL BIRTHDAY SCREEN -->
+
+<section class="final-section hidden" id="final">
+
+    <div class="final-content">
+
+        <div class="cake">🎂</div>
+
+        <h1>Happyyy Birthdayyy Kashishhh! ❤️</h1>
+
+        <p>
+            Keep smiling, keep shining and keep being the
+            wonderful person you are. Wishing you a year
+            full of happiness, good health and beautiful memories!
+        </p>
+
+        <div class="final-date">27 • 11 • 2026</div>
+
+        <div style="margin-top:25px; font-size:30px;">
+            🎀 🌷 💗 🥳
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+/* MUSIC PLAYER */
+
+const song = document.getElementById("birthdaySong");
+const musicButton = document.getElementById("musicToggle");
+
+function toggleMusic() {
+
+    if (song.paused) {
+
+        song.play().then(() => {
+            musicButton.textContent = "⏸ Pause Music";
+        }).catch(() => {
+            musicButton.textContent = "▶ Try Playing Again";
+        });
+
+    } else {
+
+        song.pause();
+        musicButton.textContent = "▶ Play Music";
+
+    }
+}
+
+song.addEventListener("ended", () => {
+    musicButton.textContent = "▶ Play Music";
+});
+
+/* OPEN LETTER */
+
+function openLetter() {
+
+    const letter = document.getElementById("letter");
+
+    letter.classList.remove("hidden");
+
+    setTimeout(() => {
+        letter.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+
+}
+
+/* FINAL SCREEN */
+
+function showFinal() {
+
+    const finalScreen = document.getElementById("final");
+
+    finalScreen.classList.remove("hidden");
+
+    setTimeout(() => {
+
+        finalScreen.scrollIntoView({ behavior: "smooth" });
+        createConfetti();
+
+    }, 100);
+
+}
+
+/* FLOATING HEARTS */
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    heart.textContent = ["💗", "💕", "🌸", "✨", "💖"][
+        Math.floor(Math.random() * 5)
+    ];
+
+    heart.style.left = Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + "s";
+
+    heart.style.fontSize =
+        (14 + Math.random() * 20) + "px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+
+}
+
+setInterval(createHeart, 900);
+
+/* CELEBRATION */
+
+function createConfetti() {
+
+    for (let i = 0; i < 45; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
